@@ -13,6 +13,7 @@ public class TaxController {
             case "IN" -> 18;
             case "US" -> 8;
             case "EU" -> 20;
+            case "PK" -> 15;
             default -> 10;
         };
 

@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp1-hello
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myapp1-hello
+  template:
+    metadata:
+      labels:
+        app: myapp1-hello
+    spec:
+      containers:
+        - name: myapp1-hello
+          image: diyan993/hello-spring:1.0
+          #env:
+          #  - name: ENV_VALUE
+          #    value: "hello from app.yaml"
+          #   - name: DB_PASSWORD
+          #    value: "rocco@12345"
+          env:
+            - name: ENV_VALUE
+              valueFrom:
+                configMapKeyRef:
+                  name: hello-app-config
+                  key: HELLO_APP_MESSAGE
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: hello-db-secret
+                  key: HELLO_DB_PASSWORD
+          ports:
+            - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp1-hello
+spec:
+  selector:
+    app: myapp1-hello
+  type: NodePort
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 32001
