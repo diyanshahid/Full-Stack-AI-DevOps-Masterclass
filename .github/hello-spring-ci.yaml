@@ -59,3 +59,4 @@ jobs:
             tags: |
               ${{ secrets.DOCKER_USERNAME }}/hello-spring:latest
               ${{ secrets.DOCKER_USERNAME }}/hello-spring:${{ github.sha }}
+              
