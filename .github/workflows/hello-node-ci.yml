@@ -1,0 +1,26 @@
+name: Second CI
+
+on:
+  push:
+   # path: ""
+  workflow_dispatch:
+
+jobs:
+    build-test:
+            runs-on: ubuntu-latest
+
+            steps:
+                - name: Checkout Code
+                    run: echo ""
+
+                - name: Setup Node.js
+                    run: echo ""
+
+                - name: Install Dependencies
+                    run: echo ""
+
+                - name: Run Tests (if any)
+                    run: echo ""
+
+
+    docker-build-push:
