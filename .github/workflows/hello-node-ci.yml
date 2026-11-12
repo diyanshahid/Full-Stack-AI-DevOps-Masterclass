@@ -1,8 +1,11 @@
-name: Second CI
+name: Node App to Docker
 
 on:
   push:
-   # path: ""
+    branches:
+      - main
+    paths:
+      - 'docker/app1-hello/node/**'
   workflow_dispatch:
 
 jobs:
