@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: service-a
-          image: diyan993/app2-tax-calculator-service-a:latest
+          image: diyan993/app2-tax-calculator-service-a:python-latest
           env:
             - name: TAX_SERVICE_URL
               value: "http://service-b:4000"
