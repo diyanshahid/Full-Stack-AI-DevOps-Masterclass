@@ -38,8 +38,8 @@ jobs:
     strategy:
       matrix:
         service: 
-          - { name: "service-a", docker_name: "app-tax-calculator", path: "docker/k8s/aws/service-a/target/surefire-reports"}
-          - { name: "service-b", docker_name: "app-tax-calculator", path: "docker/k8s/aws/service-b/target/surefire-reports"}
+          - { name: "service-a", docker_name: "app-tax-calculator", path: "docker/app2-tax-calculator/spring/service-a/target/surefire-reports"}
+          - { name: "service-b", docker_name: "app-tax-calculator", path: "docker/app2-tax-calculator/spring/service-b/target/surefire-reports"}
 
     steps:
       - name: Checkout Code
@@ -96,5 +96,5 @@ jobs:
 
       - name: Deploy to AWS EKS
         run: | 
-          kubectl apply -f docker/k8s/app2-tax-calculator/service-a
-          kubectl apply -f docker/k8s/app2-tax-calculator/service-b
+          kubectl apply -f docker/app2-tax-calculator/spring/service-a
+          kubectl apply -f docker/app2-tax-calculator/spring/service-b
