@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: service-b
-          image: diyan993/tax-service-b:latest
+          image: diyan993/app2-tax-calculator-service-b:latest
           ports:
             - containerPort: 4000
 ---
