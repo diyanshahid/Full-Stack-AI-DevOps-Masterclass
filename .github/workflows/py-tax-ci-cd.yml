@@ -85,6 +85,6 @@ jobs:
 
       - name: Deploy to AWS EKS
         run: | 
-          kubectl apply -f docker/app2-tax-calculator/spring/service-a
-          kubectl apply -f docker/app2-tax-calculator/spring/service-b
+          kubectl apply -f docker/app2-tax-calculator/python/service-a
+          kubectl apply -f docker/app2-tax-calculator/python/service-b
           
